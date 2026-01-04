@@ -6,10 +6,6 @@ const meta: Meta<typeof Separator> = {
   component: Separator,
   tags: ['autodocs'],
   argTypes: {
-    variant: {
-      control: 'select',
-      options: ['default', 'dashed', 'dotted'],
-    },
     orientation: {
       control: 'select',
       options: ['horizontal', 'vertical'],
@@ -25,7 +21,6 @@ type Story = StoryObj<typeof Separator>;
 
 export const Default: Story = {
   args: {
-    variant: 'default',
     orientation: 'horizontal',
     decorative: true,
   },

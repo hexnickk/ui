@@ -28,7 +28,7 @@ function FieldLegend({
       data-slot="field-legend"
       data-variant={variant}
       className={cn(
-        "mb-2.5 font-bold data-[variant=label]:text-xs data-[variant=legend]:text-sm",
+        "mb-2.5 font-semibold uppercase data-[variant=label]:text-xs data-[variant=legend]:text-sm",
         className,
       )}
       {...props}
@@ -104,7 +104,7 @@ function FieldLabel({
     <Label
       data-slot="field-label"
       className={cn(
-        "has-data-checked:bg-primary/5 has-data-checked:border-primary gap-2 group-data-[disabled=true]/field:opacity-50 has-[>[data-slot=field]]:rounded-none has-[>[data-slot=field]]:border-2 has-[>[data-slot=field]]:border-border [&>*]:data-[slot=field]:p-2 group/field-label peer/field-label flex w-fit leading-snug",
+        "has-data-checked:bg-primary/5 has-data-checked:border-primary gap-2 group-data-[disabled=true]/field:opacity-50 has-[>[data-slot=field]]:rounded-none has-[>[data-slot=field]]:border has-[>[data-slot=field]]:border-border [&>*]:data-[slot=field]:p-2 group/field-label peer/field-label flex w-fit leading-snug",
         "has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
         className,
       )}
@@ -214,7 +214,7 @@ function FieldError({
     <div
       role="alert"
       data-slot="field-error"
-      className={cn("text-destructive bg-destructive/5 px-2 py-1 rounded-none text-xs font-normal", className)}
+      className={cn("text-destructive text-xs font-normal", className)}
       {...props}
     >
       {content}

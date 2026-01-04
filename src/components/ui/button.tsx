@@ -5,13 +5,13 @@ import { Slot } from "radix-ui";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "rounded-none border-2 text-xs font-medium inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 outline-none group/button select-none [&_svg:not([class*='size-'])]:size-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:shadow-none",
+  "rounded-none border text-xs font-semibold uppercase inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:text-muted-foreground disabled:border-muted disabled:bg-transparent [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 outline-none group/button select-none [&_svg:not([class*='size-'])]:size-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring active:opacity-80",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground border-border hover:brightness-95",
-        secondary: "bg-secondary text-secondary-foreground border-border hover:brightness-95",
-        destructive: "bg-destructive text-destructive-foreground border-border hover:brightness-95",
+        default: "bg-primary text-primary-foreground border-primary hover:opacity-90",
+        secondary: "bg-secondary text-secondary-foreground border-primary hover:bg-background",
+        destructive: "bg-destructive text-destructive-foreground border-destructive hover:opacity-90",
       },
       size: {
         default:

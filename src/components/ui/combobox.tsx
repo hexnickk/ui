@@ -40,7 +40,7 @@ function ComboboxClear({ className, ...props }: ComboboxPrimitive.Clear.Props) {
   return (
     <ComboboxPrimitive.Clear
       data-slot="combobox-clear"
-      render={<InputGroupButton variant="ghost" size="icon-xs" />}
+      render={<InputGroupButton variant="secondary" size="icon-xs" />}
       className={cn(className)}
       {...props}
     >
@@ -70,7 +70,7 @@ function ComboboxInput({
         {showTrigger && (
           <InputGroupButton
             size="icon-xs"
-            variant="ghost"
+            variant="secondary"
             asChild
             data-slot="input-group-button"
             className="group-has-data-[slot=combobox-clear]/input-group:hidden data-pressed:bg-transparent"
@@ -113,7 +113,7 @@ function ComboboxContent({
           data-slot="combobox-content"
           data-chips={!!anchor}
           className={cn(
-            "bg-popover text-popover-foreground data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 border-2 border-border shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] *:data-[slot=input-group]:bg-background max-h-72 min-w-36 overflow-hidden rounded-none duration-100 *:data-[slot=input-group]:m-1 *:data-[slot=input-group]:mb-0 *:data-[slot=input-group]:h-8 *:data-[slot=input-group]:shadow-none group/combobox-content relative max-h-(--available-height) w-(--anchor-width) max-w-(--available-width) min-w-[calc(var(--anchor-width)+--spacing(7))] origin-(--transform-origin) data-[chips=true]:min-w-(--anchor-width)",
+            "bg-secondary text-popover-foreground data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 border border-primary *:data-[slot=input-group]:bg-secondary max-h-72 min-w-36 overflow-hidden rounded-none duration-100 *:data-[slot=input-group]:m-1 *:data-[slot=input-group]:mb-0 *:data-[slot=input-group]:h-8 group/combobox-content relative max-h-(--available-height) w-(--anchor-width) max-w-(--available-width) min-w-[calc(var(--anchor-width)+--spacing(7))] origin-(--transform-origin) data-[chips=true]:min-w-(--anchor-width)",
             className,
           )}
           {...props}
@@ -179,7 +179,7 @@ function ComboboxLabel({
   return (
     <ComboboxPrimitive.GroupLabel
       data-slot="combobox-label"
-      className={cn("text-muted-foreground font-bold px-2 py-2 text-xs", className)}
+      className={cn("text-muted-foreground font-semibold uppercase px-2 py-2 text-xs", className)}
       {...props}
     />
   );
@@ -211,7 +211,7 @@ function ComboboxSeparator({
   return (
     <ComboboxPrimitive.Separator
       data-slot="combobox-separator"
-      className={cn("bg-border -mx-1 h-[2px]", className)}
+      className={cn("bg-none border-t border-dotted border-primary -mx-1 h-[1px]", className)}
       {...props}
     />
   );
@@ -226,7 +226,7 @@ function ComboboxChips({
     <ComboboxPrimitive.Chips
       data-slot="combobox-chips"
       className={cn(
-        "bg-background border-2 border-input focus-within:border-ring focus-within:ring-2 focus-within:ring-ring/30 has-aria-invalid:border-2 has-aria-invalid:border-destructive has-aria-invalid:bg-destructive/5 flex min-h-8 flex-wrap items-center gap-1 rounded-none bg-clip-padding px-2.5 py-1 text-xs transition-colors has-data-[slot=combobox-chip]:px-1",
+        "bg-secondary border border-input focus-within:border-ring has-aria-invalid:border has-aria-invalid:border-destructive flex min-h-8 flex-wrap items-center gap-1 rounded-none bg-clip-padding px-2.5 py-1 text-xs transition-colors has-data-[slot=combobox-chip]:px-1",
         className,
       )}
       {...props}
@@ -254,7 +254,7 @@ function ComboboxChip({
       {children}
       {showRemove && (
         <ComboboxPrimitive.ChipRemove
-          render={<Button variant="ghost" size="icon-xs" />}
+          render={<Button variant="secondary" size="icon-xs" />}
           className="-ml-1 opacity-50 hover:opacity-100"
           data-slot="combobox-chip-remove"
         >
