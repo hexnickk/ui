@@ -27,7 +27,7 @@ function ComboboxTrigger({
   return (
     <ComboboxPrimitive.Trigger
       data-slot="combobox-trigger"
-      className={cn("[&_svg:not([class*='size-'])]:size-4", className)}
+      className={cn("[&_svg:not([class*='size-'])]:size-4 px-2 h-full", className)}
       {...props}
     >
       {children}
@@ -40,11 +40,10 @@ function ComboboxClear({ className, ...props }: ComboboxPrimitive.Clear.Props) {
   return (
     <ComboboxPrimitive.Clear
       data-slot="combobox-clear"
-      render={<InputGroupButton variant="secondary" size="icon-xs" />}
-      className={cn(className)}
+      className={cn("cursor-pointer", className)}
       {...props}
     >
-      <XIcon className="pointer-events-none" />
+      <XIcon className="pointer-events-none size-4" />
     </ComboboxPrimitive.Clear>
   );
 }
@@ -66,18 +65,9 @@ function ComboboxInput({
         render={<InputGroupInput disabled={disabled} />}
         {...props}
       />
-      <InputGroupAddon align="inline-end">
+      <InputGroupAddon align="inline-end" className="bg-transparent px-2 border-l-0">
         {showTrigger && (
-          <InputGroupButton
-            size="icon-xs"
-            variant="secondary"
-            asChild
-            data-slot="input-group-button"
-            className="group-has-data-[slot=combobox-clear]/input-group:hidden data-pressed:bg-transparent"
-            disabled={disabled}
-          >
-            <ComboboxTrigger />
-          </InputGroupButton>
+          <ComboboxTrigger className="cursor-pointer" />
         )}
         {showClear && <ComboboxClear disabled={disabled} />}
       </InputGroupAddon>
