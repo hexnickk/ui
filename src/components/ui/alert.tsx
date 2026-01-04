@@ -6,10 +6,10 @@ import { cn } from "@/lib/utils"
 const alertVariants = cva("grid grid-cols-[auto_1fr] gap-x-2 gap-y-0.5 rounded-none border px-2.5 py-2 text-left text-xs has-data-[slot=alert-action]:relative has-data-[slot=alert-action]:pr-18 w-full relative group/alert", {
   variants: {
     variant: {
-      default: "bg-card text-card-foreground border-l-4 border-l-gray-500 border-y border-r border-border",
-      success: "bg-card text-card-foreground border-l-4 border-l-green-500 border-y border-r border-border",
-      warning: "bg-card text-card-foreground border-l-4 border-l-amber-500 border-y border-r border-border",
-      destructive: "bg-card text-card-foreground border-l-4 border-l-red-500 border-y border-r border-border",
+      default: "bg-card text-card-foreground border-l-4 border-l-gray-500 border-y border-r border-primary",
+      success: "bg-card text-card-foreground border-l-4 border-l-green-500 border-y border-r border-primary",
+      warning: "bg-card text-card-foreground border-l-4 border-l-amber-500 border-y border-r border-primary",
+      destructive: "bg-card text-card-foreground border-l-4 border-l-red-500 border-y border-r border-primary",
     },
   },
   defaultVariants: {
