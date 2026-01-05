@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Field, FieldLabel, FieldDescription, FieldError } from './field';
+import { Field, FieldLabel, FieldDescription } from './field';
 import { Input } from './input';
 
 const meta: Meta<typeof Field> = {

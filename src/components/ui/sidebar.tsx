@@ -261,7 +261,7 @@ function SidebarTrigger({
     <Button
       data-sidebar="trigger"
       data-slot="sidebar-trigger"
-      variant="ghost"
+      variant="secondary"
       size="icon-sm"
       className={cn(className)}
       onClick={(event) => {
@@ -470,12 +470,12 @@ function SidebarMenuItem({ className, ...props }: React.ComponentProps<"li">) {
 }
 
 const sidebarMenuButtonVariants = cva(
-  "ring-sidebar-ring hover:bg-muted active:bg-muted data-active:bg-primary data-active:text-primary-foreground data-active:hover:bg-primary gap-2 rounded-none p-2 text-left text-xs group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 data-active:font-medium peer/menu-button flex w-full items-center overflow-hidden outline-hidden disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&_svg]:size-4 [&_svg]:shrink-0",
+  "ring-sidebar-ring data-active:bg-primary data-active:text-primary-foreground gap-2 rounded-none p-2 text-left text-xs group-has-data-[sidebar=menu-action]/menu-item:pr-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! data-active:font-medium peer/menu-button flex w-full items-center overflow-hidden outline-hidden disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&_svg]:size-4 [&_svg]:shrink-0 relative before:absolute before:inset-y-0 before:left-0 before:w-0 before:opacity-0 hover:before:w-1 hover:before:opacity-100 focus-visible:before:w-1 focus-visible:before:opacity-100 disabled:before:hidden before:bg-primary data-active:before:bg-primary-foreground",
   {
     variants: {
       variant: {
-        default: "hover:bg-muted",
-        outline: "bg-background hover:bg-muted shadow-[0_0_0_1px_hsl(var(--sidebar-border))]",
+        default: "",
+        outline: "bg-background shadow-[0_0_0_1px_hsl(var(--sidebar-border))]",
       },
       size: {
         default: "h-8 text-xs",
@@ -666,7 +666,7 @@ function SidebarMenuSubButton({
       data-size={size}
       data-active={isActive}
       className={cn(
-        "text-sidebar-foreground ring-sidebar-ring hover:bg-muted active:bg-muted data-active:bg-primary data-active:text-primary-foreground data-active:hover:bg-primary h-7 gap-2 rounded-none px-2 focus-visible:ring-2 data-[size=md]:text-xs data-[size=sm]:text-xs [&>svg]:size-4 flex min-w-0 -translate-x-px items-center overflow-hidden outline-hidden group-data-[collapsible=icon]:hidden disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&>svg]:shrink-0",
+        "text-sidebar-foreground ring-sidebar-ring data-active:bg-primary data-active:text-primary-foreground h-7 gap-2 rounded-none px-2 data-[size=md]:text-xs data-[size=sm]:text-xs [&>svg]:size-4 flex min-w-0 -translate-x-px items-center overflow-hidden outline-hidden group-data-[collapsible=icon]:hidden disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&>svg]:shrink-0 relative before:absolute before:inset-y-0 before:left-0 before:w-0 before:opacity-0 hover:before:w-1 hover:before:opacity-100 focus-visible:before:w-1 focus-visible:before:opacity-100 disabled:before:hidden before:bg-primary data-active:before:bg-primary-foreground",
         className
       )}
       {...props}

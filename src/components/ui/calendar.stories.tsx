@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Calendar } from './calendar';
 import { useState } from 'react';
+import type { DateRange } from 'react-day-picker';
 
 const meta: Meta<typeof Calendar> = {
   title: 'UI/Calendar',
@@ -20,7 +21,7 @@ export const Default: Story = {
 
 export const RangeSelection: Story = {
   render: () => {
-    const [date, setDate] = useState<{ from: Date | undefined; to: Date | undefined }>({
+    const [date, setDate] = useState<DateRange | undefined>({
       from: new Date(2024, 0, 15),
       to: new Date(2024, 0, 22),
     });

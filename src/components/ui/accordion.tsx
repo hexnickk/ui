@@ -24,7 +24,7 @@ function AccordionItem({
   return (
     <AccordionPrimitive.Item
       data-slot="accordion-item"
-      className={cn("border border-primary -mt-px first:mt-0", className)}
+      className={cn("border-2 border-primary -mt-0.5 first:mt-0", className)}
       {...props}
     />
   )
@@ -40,7 +40,7 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "bg-white text-foreground focus-visible:ring-ring/50 focus-visible:border-ring **:data-[slot=accordion-trigger-icon]:text-foreground rounded-none px-3 py-2.5 text-left text-xs font-medium uppercase hover:opacity-90 focus-visible:ring-1 **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-4 group/accordion-trigger relative flex flex-1 items-start justify-between border border-transparent outline-none disabled:pointer-events-none disabled:opacity-50",
+          "bg-white text-foreground **:data-[slot=accordion-trigger-icon]:text-foreground rounded-none px-3 py-2.5 text-left text-xs font-medium uppercase **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-4 group/accordion-trigger relative flex flex-1 items-start justify-between border-2 border-transparent outline-none disabled:pointer-events-none disabled:opacity-50 before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-primary before:opacity-0 hover:before:w-1 hover:before:opacity-100 focus-visible:before:w-1 focus-visible:before:opacity-100",
           className
         )}
         {...props}

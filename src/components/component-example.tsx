@@ -2,17 +2,14 @@ import * as React from "react";
 
 import { Example, ExampleWrapper } from "@/components/example";
 import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogMedia,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -62,7 +59,6 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import {
   PlusIcon,
-  BluetoothIcon,
   MoreVerticalIcon,
   FileIcon,
   FolderIcon,
@@ -120,30 +116,27 @@ function CardExample() {
           </CardDescription>
         </CardHeader>
         <CardFooter>
-          <AlertDialog>
-            <AlertDialogTrigger asChild>
+          <Dialog>
+            <DialogTrigger asChild>
               <Button>
                 <PlusIcon data-icon="inline-start" />
                 Show Dialog
               </Button>
-            </AlertDialogTrigger>
-            <AlertDialogContent size="sm">
-              <AlertDialogHeader>
-                <AlertDialogMedia>
-                  <BluetoothIcon />
-                </AlertDialogMedia>
-                <AlertDialogTitle>Allow accessory to connect?</AlertDialogTitle>
-                <AlertDialogDescription>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Allow accessory to connect?</DialogTitle>
+                <DialogDescription>
                   Do you want to allow the USB accessory to connect to this
                   device?
-                </AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter>
-                <AlertDialogCancel>Don&apos;t allow</AlertDialogCancel>
-                <AlertDialogAction>Allow</AlertDialogAction>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
+                </DialogDescription>
+              </DialogHeader>
+              <DialogFooter>
+                <Button variant="secondary">Don&apos;t allow</Button>
+                <Button>Allow</Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
           <Badge variant="secondary" className="ml-auto">
             Warning
           </Badge>
@@ -178,7 +171,7 @@ function FormExample() {
           <CardAction>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon">
+                <Button variant="secondary" size="icon">
                   <MoreVerticalIcon />
                   <span className="sr-only">More options</span>
                 </Button>
@@ -475,7 +468,7 @@ function FormExample() {
               </Field>
               <Field orientation="horizontal">
                 <Button type="submit">Submit</Button>
-                <Button variant="outline" type="button">
+                <Button variant="secondary" type="button">
                   Cancel
                 </Button>
               </Field>

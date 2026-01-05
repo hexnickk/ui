@@ -56,7 +56,7 @@ function DialogContent({
       <DialogPrimitive.Content
         data-slot="dialog-content"
         className={cn(
-          "bg-background border border-black grid max-w-[calc(100%-2rem)] gap-4 rounded-none p-4 text-xs/relaxed sm:max-w-sm fixed top-1/2 left-1/2 z-50 w-full -translate-x-1/2 -translate-y-1/2 ![animation-duration:0s] ![transition-duration:0s]",
+          "bg-background border-2 border-primary grid max-w-[calc(100%-2rem)] gap-4 rounded-none p-4 text-xs/relaxed sm:max-w-sm fixed top-1/2 left-1/2 z-50 w-full -translate-x-1/2 -translate-y-1/2",
           className
         )}
         {...props}
@@ -64,7 +64,7 @@ function DialogContent({
         {children}
         {showCloseButton && (
           <DialogPrimitive.Close data-slot="dialog-close" asChild>
-            <Button variant="ghost" className="absolute top-2 right-2" size="icon-sm">
+            <Button variant="secondary" className="absolute top-2 right-2" size="icon-sm">
               <XIcon
               />
               <span className="sr-only">Close</span>
@@ -106,7 +106,7 @@ function DialogFooter({
       {children}
       {showCloseButton && (
         <DialogPrimitive.Close asChild>
-          <Button variant="outline">Close</Button>
+          <Button variant="secondary">Close</Button>
         </DialogPrimitive.Close>
       )}
     </div>

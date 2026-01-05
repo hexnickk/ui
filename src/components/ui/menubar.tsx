@@ -11,7 +11,7 @@ function Menubar({
   return (
     <MenubarPrimitive.Root
       data-slot="menubar"
-      className={cn("bg-background h-8 gap-0.5 rounded-none border p-1 flex items-center", className)}
+      className={cn("bg-background h-8 gap-0.5 rounded-none border-2 border-primary p-1 flex items-center", className)}
       {...props}
     />
   )
@@ -51,7 +51,7 @@ function MenubarTrigger({
     <MenubarPrimitive.Trigger
       data-slot="menubar-trigger"
       className={cn(
-        "hover:bg-muted aria-expanded:bg-primary aria-expanded:text-primary-foreground rounded-none px-1.5 py-[calc(--spacing(0.8))] text-xs font-medium uppercase flex items-center outline-hidden select-none",
+        "aria-expanded:bg-primary aria-expanded:text-primary-foreground rounded-none px-2 py-1 text-xs font-medium uppercase flex items-center outline-hidden select-none relative before:absolute before:inset-y-0 before:left-0 before:w-0 before:opacity-0 hover:before:w-1 hover:before:opacity-100 focus-visible:before:w-1 focus-visible:before:opacity-100 before:bg-primary aria-expanded:before:bg-primary-foreground",
         className
       )}
       {...props}
@@ -73,7 +73,7 @@ function MenubarContent({
         align={align}
         alignOffset={alignOffset}
         sideOffset={sideOffset}
-        className={cn("bg-popover text-popover-foreground min-w-36 rounded-none border border-black z-50 overflow-hidden", className )}
+        className={cn("bg-secondary text-popover-foreground min-w-36 rounded-none border-2 border-primary z-50 overflow-hidden", className )}
         {...props}
       />
     </MenubarPortal>
@@ -95,7 +95,7 @@ function MenubarItem({
       data-inset={inset}
       data-variant={variant}
       className={cn(
-        "focus:bg-primary focus:text-primary-foreground data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive data-[variant=destructive]:focus:text-primary-foreground data-[variant=destructive]:*:[svg]:!text-destructive not-data-[variant=destructive]:focus:**:text-primary-foreground gap-2 rounded-none px-2 py-2 text-xs data-[disabled]:opacity-50 data-[inset]:pl-8 [&_svg:not([class*='size-'])]:size-4 group/menubar-item relative flex cursor-default items-center outline-hidden select-none data-[disabled]:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "gap-2 rounded-none px-2 py-2 text-xs data-[disabled]:opacity-50 data-[inset]:pl-8 [&_svg:not([class*='size-'])]:size-4 group/menubar-item relative flex cursor-default items-center outline-hidden select-none data-[disabled]:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 before:absolute before:inset-y-0 before:left-0 before:w-0 before:opacity-0 hover:before:w-1 hover:before:opacity-100 focus-visible:before:w-1 focus-visible:before:opacity-100 focus:before:w-1 focus:before:opacity-100 data-[disabled]:before:hidden before:bg-primary data-[variant=destructive]:text-destructive data-[variant=destructive]:before:bg-destructive",
         className
       )}
       {...props}
@@ -113,7 +113,7 @@ function MenubarCheckboxItem({
     <MenubarPrimitive.CheckboxItem
       data-slot="menubar-checkbox-item"
       className={cn(
-        "focus:bg-accent focus:text-accent-foreground focus:**:text-accent-foreground gap-2 rounded-none py-2 pr-2 pl-7 text-xs data-disabled:opacity-50 relative flex cursor-default items-center outline-hidden select-none data-disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground gap-2 rounded-none py-2 pr-2 pl-7 text-xs data-disabled:opacity-50 relative flex cursor-default items-center outline-hidden select-none data-disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 before:absolute before:inset-y-0 before:left-0 before:w-0 before:opacity-0 hover:before:w-1 hover:before:opacity-100 focus-visible:before:w-1 focus-visible:before:opacity-100 focus:before:w-1 focus:before:opacity-100 data-disabled:before:hidden before:bg-primary data-[state=checked]:before:bg-primary-foreground",
         className
       )}
       checked={checked}
@@ -139,7 +139,7 @@ function MenubarRadioItem({
     <MenubarPrimitive.RadioItem
       data-slot="menubar-radio-item"
       className={cn(
-        "focus:bg-accent focus:text-accent-foreground focus:**:text-accent-foreground gap-2 rounded-none py-2 pr-2 pl-7 text-xs data-disabled:opacity-50 [&_svg:not([class*='size-'])]:size-4 relative flex cursor-default items-center outline-hidden select-none data-disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground gap-2 rounded-none py-2 pr-2 pl-7 text-xs data-disabled:opacity-50 [&_svg:not([class*='size-'])]:size-4 relative flex cursor-default items-center outline-hidden select-none data-disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 before:absolute before:inset-y-0 before:left-0 before:w-0 before:opacity-0 hover:before:w-1 hover:before:opacity-100 focus-visible:before:w-1 focus-visible:before:opacity-100 focus:before:w-1 focus:before:opacity-100 data-disabled:before:hidden before:bg-primary data-[state=checked]:before:bg-primary-foreground",
         className
       )}
       {...props}
@@ -217,7 +217,7 @@ function MenubarSubTrigger({
       data-slot="menubar-sub-trigger"
       data-inset={inset}
       className={cn(
-        "focus:bg-accent focus:text-accent-foreground data-open:bg-accent data-open:text-accent-foreground gap-2 rounded-none px-2 py-2 text-xs data-[inset]:pl-8 [&_svg:not([class*='size-'])]:size-4 flex cursor-default items-center outline-none select-none",
+        "data-open:bg-primary data-open:text-primary-foreground gap-2 rounded-none px-2 py-2 text-xs data-[inset]:pl-8 [&_svg:not([class*='size-'])]:size-4 flex cursor-default items-center outline-none select-none relative before:absolute before:inset-y-0 before:left-0 before:w-0 before:opacity-0 hover:before:w-1 hover:before:opacity-100 focus-visible:before:w-1 focus-visible:before:opacity-100 focus:before:w-1 focus:before:opacity-100 before:bg-primary data-open:before:bg-primary-foreground",
         className
       )}
       {...props}
@@ -235,7 +235,7 @@ function MenubarSubContent({
   return (
     <MenubarPrimitive.SubContent
       data-slot="menubar-sub-content"
-      className={cn("bg-popover text-popover-foreground ring-foreground/10 min-w-32 rounded-none shadow-lg ring-1 ![animation-duration:0s] ![transition-duration:0s] z-50 origin-(--radix-menubar-content-transform-origin) overflow-hidden", className )}
+      className={cn("bg-secondary text-popover-foreground min-w-32 rounded-none border-2 border-primary z-50 origin-(--radix-menubar-content-transform-origin) overflow-hidden", className )}
       {...props}
     />
   )

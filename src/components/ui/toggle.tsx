@@ -7,12 +7,12 @@ import { Toggle as TogglePrimitive } from "radix-ui"
 import { cn } from "@/lib/utils"
 
 const toggleVariants = cva(
-  "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 aria-invalid:border-destructive data-[state=on]:bg-primary data-[state=on]:text-primary-foreground gap-1 rounded-none text-xs font-medium uppercase [&_svg:not([class*='size-'])]:size-4 group/toggle inline-flex items-center justify-center whitespace-nowrap outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  "aria-invalid:border-destructive data-[state=on]:bg-primary data-[state=on]:text-primary-foreground gap-1 rounded-none text-xs font-medium uppercase [&_svg:not([class*='size-'])]:size-4 group/toggle inline-flex items-center justify-center whitespace-nowrap outline-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 relative before:absolute before:inset-y-0 before:left-0 before:w-0 before:opacity-0 hover:before:w-1 hover:before:opacity-100 focus-visible:before:w-1 focus-visible:before:opacity-100 disabled:before:hidden before:bg-primary data-[state=on]:before:bg-primary-foreground",
   {
     variants: {
       variant: {
-        default: "bg-white border border-input hover:bg-muted/50",
-        outline: "border-input border bg-white hover:bg-muted/50",
+        default: "bg-white border-2 border-primary",
+        outline: "border-primary border-2 bg-white",
       },
       size: {
         default: "h-8 min-w-8 px-2",

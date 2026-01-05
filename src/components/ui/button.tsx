@@ -5,13 +5,13 @@ import { Slot } from "radix-ui";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "rounded-none border text-xs font-semibold uppercase inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:text-muted-foreground disabled:border-muted disabled:bg-transparent [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 outline-none group/button select-none [&_svg:not([class*='size-'])]:size-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring active:opacity-80",
+  "rounded-none border-2 text-xs font-semibold uppercase inline-flex items-center justify-center whitespace-nowrap disabled:pointer-events-none disabled:text-muted-foreground disabled:border-muted disabled:bg-transparent [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 outline-none group/button select-none [&_svg:not([class*='size-'])]:size-4 relative before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-current before:opacity-0 hover:before:w-1 hover:before:opacity-100 focus-visible:before:w-1 focus-visible:before:opacity-100 disabled:before:hidden",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground border-primary hover:opacity-80",
-        secondary: "bg-secondary text-secondary-foreground border-primary hover:bg-muted",
-        destructive: "bg-red-100 text-red-700 border-red-500 hover:bg-red-200",
+        default: "bg-primary text-primary-foreground border-primary before:bg-primary-foreground",
+        secondary: "bg-secondary text-secondary-foreground border-primary before:bg-primary",
+        destructive: "bg-red-100 text-red-700 border-red-500 before:bg-red-500",
       },
       size: {
         default:

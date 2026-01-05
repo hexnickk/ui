@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Empty, EmptyHeader, EmptyTitle, EmptyDescription, EmptyContent, EmptyMedia } from './empty';
+import { Empty, EmptyHeader, EmptyTitle, EmptyDescription, EmptyMedia } from './empty';
 import { InboxIcon } from 'lucide-react';
 
 const meta: Meta<typeof Empty> = {

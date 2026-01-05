@@ -86,7 +86,7 @@ export const WithAction: Story = {
         <a href="#" className="underline">Learn more</a>
       </AlertDescription>
       <AlertAction>
-        <Button variant="ghost" size="icon-sm">
+        <Button variant="secondary" size="icon-sm">
           <XIcon />
         </Button>
       </AlertAction>

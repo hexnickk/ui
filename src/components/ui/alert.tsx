@@ -37,16 +37,17 @@ function Alert({
   children,
   ...props
 }: React.ComponentProps<"div"> & VariantProps<typeof alertVariants>) {
+  const v = variant ?? "default"
   return (
     <div
       data-slot="alert"
-      data-variant={variant}
+      data-variant={v}
       role="alert"
       className={cn(alertVariants({ variant }), className)}
       {...props}
     >
-      <span className={cn("text-xs font-mono row-span-2", iconColorMap[variant])}>
-        {iconMap[variant]}
+      <span className={cn("text-xs font-mono row-span-2", iconColorMap[v])}>
+        {iconMap[v]}
       </span>
       {children}
     </div>

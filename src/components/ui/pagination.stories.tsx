@@ -5,8 +5,6 @@ import {
   PaginationEllipsis,
   PaginationItem,
   PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
 } from './pagination';
 
 const meta: Meta<typeof Pagination> = {
