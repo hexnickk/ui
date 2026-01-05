@@ -16,29 +16,49 @@ type Story = StoryObj;
 
 export const Default: Story = {
   render: () => (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background font-mono">
       {/* Header */}
-      <header className="border-b-2 border-border bg-card">
-        <div className="px-6 py-4">
-          <div className="flex items-center justify-between">
+      <header className="border-b-2 border-primary bg-card">
+        <div className="px-4 py-4 lg:px-6">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
-                <div className="size-8 border-2 border-primary bg-primary" />
-                <span className="text-sm font-semibold uppercase">TaskFlow</span>
+                <div className="size-8 rounded-none border-2 border-primary bg-primary" />
+                <span className="text-sm font-semibold uppercase">TASKFLOW</span>
               </div>
-              <Separator orientation="vertical" className="h-6" />
+              <Separator orientation="vertical" className="hidden h-6 lg:block" />
               <nav className="flex items-center gap-4">
-                <a href="#" className="text-xs font-semibold uppercase text-primary">Dashboard</a>
-                <a href="#" className="text-xs uppercase text-muted-foreground hover:text-foreground">Projects</a>
-                <a href="#" className="text-xs uppercase text-muted-foreground hover:text-foreground">Tasks</a>
-                <a href="#" className="text-xs uppercase text-muted-foreground hover:text-foreground">Team</a>
+                <a
+                  href="#"
+                  className="relative text-xs font-semibold uppercase text-primary before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-current before:opacity-0 hover:before:w-1 hover:before:opacity-100"
+                >
+                  DASHBOARD
+                </a>
+                <a
+                  href="#"
+                  className="relative text-xs uppercase text-muted-foreground before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-current before:opacity-0 hover:text-foreground hover:before:w-1 hover:before:opacity-100"
+                >
+                  PROJECTS
+                </a>
+                <a
+                  href="#"
+                  className="relative text-xs uppercase text-muted-foreground before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-current before:opacity-0 hover:text-foreground hover:before:w-1 hover:before:opacity-100"
+                >
+                  TASKS
+                </a>
+                <a
+                  href="#"
+                  className="relative text-xs uppercase text-muted-foreground before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-current before:opacity-0 hover:text-foreground hover:before:w-1 hover:before:opacity-100"
+                >
+                  TEAM
+                </a>
               </nav>
             </div>
             <div className="flex items-center gap-3">
               <Input
                 type="search"
-                placeholder="Search..."
-                className="w-64"
+                placeholder="SEARCH..."
+                className="w-full lg:w-64"
               />
               <Button variant="secondary" size="sm">
                 <span className="text-xs">👤</span>
@@ -48,55 +68,76 @@ export const Default: Story = {
         </div>
       </header>
 
-      <div className="flex">
+      <div className="flex flex-col lg:flex-row">
         {/* Sidebar */}
-        <aside className="w-64 border-r-2 border-border bg-card">
-          <div className="p-6">
+        <aside className="border-b-2 border-primary bg-card lg:w-64 lg:border-b-0 lg:border-r-2">
+          <div className="p-4 lg:p-6">
             <div className="mb-6">
-              <Button className="w-full">+ New Task</Button>
+              <Button className="w-full">+ NEW TASK</Button>
             </div>
 
             <div className="space-y-6">
               <div>
                 <div className="mb-3 text-xs font-semibold uppercase text-muted-foreground">
-                  Workspace
+                  WORKSPACE
                 </div>
                 <nav className="space-y-1">
-                  <a href="#" className="flex items-center gap-2 rounded border-2 border-primary bg-primary px-3 py-2 text-xs font-semibold uppercase text-primary-foreground">
+                  <a
+                    href="#"
+                    className="flex h-11 items-center gap-2 rounded-none border-2 border-primary bg-primary px-3 text-xs font-semibold uppercase text-primary-foreground"
+                  >
                     <span>📊</span>
-                    <span>Overview</span>
+                    <span>OVERVIEW</span>
                   </a>
-                  <a href="#" className="flex items-center gap-2 rounded px-3 py-2 text-xs uppercase text-muted-foreground hover:bg-secondary">
+                  <a
+                    href="#"
+                    className="relative flex h-11 items-center gap-2 rounded-none px-3 text-xs uppercase text-muted-foreground before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-current before:opacity-0 hover:bg-secondary hover:before:w-1 hover:before:opacity-100"
+                  >
                     <span>📋</span>
-                    <span>My Tasks</span>
+                    <span>MY TASKS</span>
                     <Badge variant="secondary" className="ml-auto">12</Badge>
                   </a>
-                  <a href="#" className="flex items-center gap-2 rounded px-3 py-2 text-xs uppercase text-muted-foreground hover:bg-secondary">
+                  <a
+                    href="#"
+                    className="relative flex h-11 items-center gap-2 rounded-none px-3 text-xs uppercase text-muted-foreground before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-current before:opacity-0 hover:bg-secondary hover:before:w-1 hover:before:opacity-100"
+                  >
                     <span>⭐</span>
-                    <span>Starred</span>
+                    <span>STARRED</span>
                   </a>
-                  <a href="#" className="flex items-center gap-2 rounded px-3 py-2 text-xs uppercase text-muted-foreground hover:bg-secondary">
+                  <a
+                    href="#"
+                    className="relative flex h-11 items-center gap-2 rounded-none px-3 text-xs uppercase text-muted-foreground before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-current before:opacity-0 hover:bg-secondary hover:before:w-1 hover:before:opacity-100"
+                  >
                     <span>📁</span>
-                    <span>Projects</span>
+                    <span>PROJECTS</span>
                   </a>
                 </nav>
               </div>
 
               <div>
                 <div className="mb-3 text-xs font-semibold uppercase text-muted-foreground">
-                  Recent Projects
+                  RECENT PROJECTS
                 </div>
                 <nav className="space-y-1">
-                  <a href="#" className="flex items-center gap-2 rounded px-3 py-2 text-xs hover:bg-secondary">
-                    <div className="size-2 bg-yellow-500" />
+                  <a
+                    href="#"
+                    className="relative flex h-11 items-center gap-2 rounded-none px-3 text-xs before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-current before:opacity-0 hover:bg-secondary hover:before:w-1 hover:before:opacity-100"
+                  >
+                    <div className="size-2 rounded-none bg-yellow-500" />
                     <span>Website Redesign</span>
                   </a>
-                  <a href="#" className="flex items-center gap-2 rounded px-3 py-2 text-xs hover:bg-secondary">
-                    <div className="size-2 bg-green-500" />
+                  <a
+                    href="#"
+                    className="relative flex h-11 items-center gap-2 rounded-none px-3 text-xs before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-current before:opacity-0 hover:bg-secondary hover:before:w-1 hover:before:opacity-100"
+                  >
+                    <div className="size-2 rounded-none bg-green-500" />
                     <span>Mobile App</span>
                   </a>
-                  <a href="#" className="flex items-center gap-2 rounded px-3 py-2 text-xs hover:bg-secondary">
-                    <div className="size-2 bg-blue-500" />
+                  <a
+                    href="#"
+                    className="relative flex h-11 items-center gap-2 rounded-none px-3 text-xs before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-current before:opacity-0 hover:bg-secondary hover:before:w-1 hover:before:opacity-100"
+                  >
+                    <div className="size-2 rounded-none bg-blue-500" />
                     <span>API Integration</span>
                   </a>
                 </nav>
@@ -106,22 +147,22 @@ export const Default: Story = {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-6">
+        <main className="flex-1 p-4 lg:p-6">
           {/* Stats Grid */}
           <div className="mb-6">
-            <h1 className="mb-1 text-2xl font-bold uppercase">Dashboard</h1>
+            <h1 className="mb-1 text-2xl font-bold uppercase">DASHBOARD</h1>
             <p className="text-sm text-muted-foreground">Welcome back! Here's what's happening.</p>
           </div>
 
-          <div className="mb-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mb-6 grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
             <Card>
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-xs uppercase text-muted-foreground">Total Tasks</p>
+                    <p className="text-xs uppercase text-muted-foreground">TOTAL TASKS</p>
                     <p className="mt-1 text-2xl font-bold">128</p>
                   </div>
-                  <div className="flex size-12 items-center justify-center border-2 border-border bg-secondary">
+                  <div className="flex size-12 items-center justify-center rounded-none border-2 border-primary bg-secondary">
                     <span className="text-lg">📋</span>
                   </div>
                 </div>
@@ -136,10 +177,10 @@ export const Default: Story = {
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-xs uppercase text-muted-foreground">Completed</p>
+                    <p className="text-xs uppercase text-muted-foreground">COMPLETED</p>
                     <p className="mt-1 text-2xl font-bold">84</p>
                   </div>
-                  <div className="flex size-12 items-center justify-center border-2 border-border bg-secondary">
+                  <div className="flex size-12 items-center justify-center rounded-none border-2 border-primary bg-secondary">
                     <span className="text-lg">✓</span>
                   </div>
                 </div>
@@ -154,10 +195,10 @@ export const Default: Story = {
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-xs uppercase text-muted-foreground">In Progress</p>
+                    <p className="text-xs uppercase text-muted-foreground">IN PROGRESS</p>
                     <p className="mt-1 text-2xl font-bold">32</p>
                   </div>
-                  <div className="flex size-12 items-center justify-center border-2 border-border bg-secondary">
+                  <div className="flex size-12 items-center justify-center rounded-none border-2 border-primary bg-secondary">
                     <span className="text-lg">⏳</span>
                   </div>
                 </div>
@@ -172,10 +213,10 @@ export const Default: Story = {
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-xs uppercase text-muted-foreground">Overdue</p>
+                    <p className="text-xs uppercase text-muted-foreground">OVERDUE</p>
                     <p className="mt-1 text-2xl font-bold">12</p>
                   </div>
-                  <div className="flex size-12 items-center justify-center border-2 border-border bg-secondary">
+                  <div className="flex size-12 items-center justify-center rounded-none border-2 border-primary bg-secondary">
                     <span className="text-lg">⚠️</span>
                   </div>
                 </div>
@@ -191,13 +232,13 @@ export const Default: Story = {
             {/* Recent Activity */}
             <Card>
               <CardHeader>
-                <CardTitle>Recent Activity</CardTitle>
+                <CardTitle>RECENT ACTIVITY</CardTitle>
                 <CardDescription>Your latest task updates</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex gap-3">
-                    <div className="flex size-8 shrink-0 items-center justify-center border-2 border-border bg-green-100 text-xs font-bold">
+                    <div className="flex size-8 shrink-0 items-center justify-center rounded-none border-2 border-primary bg-green-100 text-xs font-bold">
                       ✓
                     </div>
                     <div className="flex-1">
@@ -209,7 +250,7 @@ export const Default: Story = {
                   <Separator />
 
                   <div className="flex gap-3">
-                    <div className="flex size-8 shrink-0 items-center justify-center border-2 border-border bg-blue-100 text-xs font-bold">
+                    <div className="flex size-8 shrink-0 items-center justify-center rounded-none border-2 border-primary bg-blue-100 text-xs font-bold">
                       📝
                     </div>
                     <div className="flex-1">
@@ -221,7 +262,7 @@ export const Default: Story = {
                   <Separator />
 
                   <div className="flex gap-3">
-                    <div className="flex size-8 shrink-0 items-center justify-center border-2 border-border bg-yellow-100 text-xs font-bold">
+                    <div className="flex size-8 shrink-0 items-center justify-center rounded-none border-2 border-primary bg-yellow-100 text-xs font-bold">
                       +
                     </div>
                     <div className="flex-1">
@@ -233,7 +274,7 @@ export const Default: Story = {
                   <Separator />
 
                   <div className="flex gap-3">
-                    <div className="flex size-8 shrink-0 items-center justify-center border-2 border-border bg-purple-100 text-xs font-bold">
+                    <div className="flex size-8 shrink-0 items-center justify-center rounded-none border-2 border-primary bg-purple-100 text-xs font-bold">
                       👤
                     </div>
                     <div className="flex-1">
@@ -244,67 +285,67 @@ export const Default: Story = {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button variant="secondary" className="w-full">View All Activity</Button>
+                <Button variant="secondary" className="w-full">VIEW ALL ACTIVITY</Button>
               </CardFooter>
             </Card>
 
             {/* Task Progress */}
             <Card>
               <CardHeader>
-                <CardTitle>Task Progress</CardTitle>
+                <CardTitle>TASK PROGRESS</CardTitle>
                 <CardDescription>Track your weekly completion rate</CardDescription>
               </CardHeader>
               <CardContent>
                 <Tabs defaultValue="week">
                   <TabsList className="mb-4 w-full">
-                    <TabsTrigger value="week" className="flex-1">Week</TabsTrigger>
-                    <TabsTrigger value="month" className="flex-1">Month</TabsTrigger>
-                    <TabsTrigger value="year" className="flex-1">Year</TabsTrigger>
+                    <TabsTrigger value="week" className="flex-1">WEEK</TabsTrigger>
+                    <TabsTrigger value="month" className="flex-1">MONTH</TabsTrigger>
+                    <TabsTrigger value="year" className="flex-1">YEAR</TabsTrigger>
                   </TabsList>
                   <TabsContent value="week" className="space-y-3">
                     <div>
                       <div className="mb-1 flex items-center justify-between text-xs">
-                        <span className="font-semibold uppercase">Monday</span>
+                        <span className="font-semibold uppercase">MONDAY</span>
                         <span className="text-muted-foreground">8/10 tasks</span>
                       </div>
-                      <div className="h-3 border-2 border-border bg-secondary">
-                        <div className="h-full bg-primary" style={{ width: '80%' }} />
+                      <div className="h-3 rounded-none border-2 border-primary bg-secondary">
+                        <div className="h-full rounded-none bg-primary" style={{ width: '80%' }} />
                       </div>
                     </div>
                     <div>
                       <div className="mb-1 flex items-center justify-between text-xs">
-                        <span className="font-semibold uppercase">Tuesday</span>
+                        <span className="font-semibold uppercase">TUESDAY</span>
                         <span className="text-muted-foreground">6/8 tasks</span>
                       </div>
-                      <div className="h-3 border-2 border-border bg-secondary">
-                        <div className="h-full bg-primary" style={{ width: '75%' }} />
+                      <div className="h-3 rounded-none border-2 border-primary bg-secondary">
+                        <div className="h-full rounded-none bg-primary" style={{ width: '75%' }} />
                       </div>
                     </div>
                     <div>
                       <div className="mb-1 flex items-center justify-between text-xs">
-                        <span className="font-semibold uppercase">Wednesday</span>
+                        <span className="font-semibold uppercase">WEDNESDAY</span>
                         <span className="text-muted-foreground">10/12 tasks</span>
                       </div>
-                      <div className="h-3 border-2 border-border bg-secondary">
-                        <div className="h-full bg-primary" style={{ width: '83%' }} />
+                      <div className="h-3 rounded-none border-2 border-primary bg-secondary">
+                        <div className="h-full rounded-none bg-primary" style={{ width: '83%' }} />
                       </div>
                     </div>
                     <div>
                       <div className="mb-1 flex items-center justify-between text-xs">
-                        <span className="font-semibold uppercase">Thursday</span>
+                        <span className="font-semibold uppercase">THURSDAY</span>
                         <span className="text-muted-foreground">5/9 tasks</span>
                       </div>
-                      <div className="h-3 border-2 border-border bg-secondary">
-                        <div className="h-full bg-primary" style={{ width: '56%' }} />
+                      <div className="h-3 rounded-none border-2 border-primary bg-secondary">
+                        <div className="h-full rounded-none bg-primary" style={{ width: '56%' }} />
                       </div>
                     </div>
                     <div>
                       <div className="mb-1 flex items-center justify-between text-xs">
-                        <span className="font-semibold uppercase">Friday</span>
+                        <span className="font-semibold uppercase">FRIDAY</span>
                         <span className="text-muted-foreground">7/7 tasks</span>
                       </div>
-                      <div className="h-3 border-2 border-border bg-primary">
-                        <div className="h-full bg-primary" style={{ width: '100%' }} />
+                      <div className="h-3 rounded-none border-2 border-primary bg-primary">
+                        <div className="h-full rounded-none bg-primary" style={{ width: '100%' }} />
                       </div>
                     </div>
                   </TabsContent>
@@ -316,41 +357,41 @@ export const Default: Story = {
           {/* Upcoming Tasks */}
           <Card className="mt-6">
             <CardHeader>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                 <div>
-                  <CardTitle>Upcoming Tasks</CardTitle>
+                  <CardTitle>UPCOMING TASKS</CardTitle>
                   <CardDescription>Tasks due in the next 7 days</CardDescription>
                 </div>
-                <Button size="sm">View All</Button>
+                <Button size="sm">VIEW ALL</Button>
               </div>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
-                <div className="flex items-center gap-4 border-l-4 border-yellow-500 bg-secondary/50 p-3">
-                  <input type="checkbox" className="size-4 border-2 border-border" />
+                <div className="relative flex items-center gap-4 rounded-none border-l-4 border-yellow-500 bg-secondary/50 p-3 before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-current before:opacity-0 hover:before:w-1 hover:before:opacity-100">
+                  <input type="checkbox" className="size-4 rounded-none border-2 border-primary" />
                   <div className="flex-1">
                     <p className="text-sm font-semibold">Update API documentation</p>
                     <p className="text-xs text-muted-foreground">API Integration • Due in 2 days</p>
                   </div>
-                  <Badge variant="outline">High</Badge>
+                  <Badge variant="outline">HIGH</Badge>
                 </div>
 
-                <div className="flex items-center gap-4 border-l-4 border-blue-500 bg-secondary/50 p-3">
-                  <input type="checkbox" className="size-4 border-2 border-border" />
+                <div className="relative flex items-center gap-4 rounded-none border-l-4 border-blue-500 bg-secondary/50 p-3 before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-current before:opacity-0 hover:before:w-1 hover:before:opacity-100">
+                  <input type="checkbox" className="size-4 rounded-none border-2 border-primary" />
                   <div className="flex-1">
                     <p className="text-sm font-semibold">Review pull requests</p>
                     <p className="text-xs text-muted-foreground">Mobile App • Due in 3 days</p>
                   </div>
-                  <Badge variant="secondary">Medium</Badge>
+                  <Badge variant="secondary">MEDIUM</Badge>
                 </div>
 
-                <div className="flex items-center gap-4 border-l-4 border-green-500 bg-secondary/50 p-3">
-                  <input type="checkbox" className="size-4 border-2 border-border" />
+                <div className="relative flex items-center gap-4 rounded-none border-l-4 border-green-500 bg-secondary/50 p-3 before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-current before:opacity-0 hover:before:w-1 hover:before:opacity-100">
+                  <input type="checkbox" className="size-4 rounded-none border-2 border-primary" />
                   <div className="flex-1">
                     <p className="text-sm font-semibold">Prepare presentation slides</p>
                     <p className="text-xs text-muted-foreground">Website Redesign • Due in 5 days</p>
                   </div>
-                  <Badge variant="secondary">Low</Badge>
+                  <Badge variant="secondary">LOW</Badge>
                 </div>
               </div>
             </CardContent>
