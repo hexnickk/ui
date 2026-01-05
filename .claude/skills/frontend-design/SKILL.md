@@ -3,57 +3,82 @@ name: frontend-design
 description: Apply when creating React frontend UI: pages, dashboards, forms, components, layouts, landing pages, modals. Enforces neobrutalist design — hard shadows, 2px borders, warm cream/yellow palette, no dark mode. Tech: React, Tailwind, shadcn (customized).
 ---
 
-Create frontends that feel like dev tools — functional, data-dense, honest. Clarity first, aesthetic second. The goal is interfaces that happen to look technical because they prioritize function, not interfaces that look technical for style points.
+Create frontends that feel like dev tools — functional, honest, unapologetically direct. The goal is interfaces that happen to look technical because they prioritize function, not interfaces that look technical for style points.
 
-## Design Thinking
+## Before You Code
 
-Before coding, understand the context:
+Ask clarifying questions. Use AskUserQuestion to understand:
+
 - **Purpose**: What job does this interface do? Who uses it and in what mindset?
-- **Density**: How much information needs to be visible at once?
 - **Key actions**: What are the 2-3 things a user must be able to do?
+- **Constraints**: What must not change? What's flexible?
 
-The aesthetic is already chosen: **neobrutalist dev-tool**. Think PostHog, Linear, Vercel dashboard. Interfaces that release dopamine through clarity and function, not decoration.
-
-Execute with intention. Every choice should feel deliberate, not default.
+Don't assume. A "simple button" might need to work in a toolbar, a card footer, and a modal. A "dashboard" might mean three widgets or thirty. Get clarity first.
 
 ## Guiding Principles
 
 **Honesty over polish**
-Raw, functional interfaces. Show structure through borders and hard edges, not gradients or blur. If something is a box, let it be a box.
+Raw, functional interfaces. Show structure through borders and hard edges. If something is a box, let it be a box. No visual tricks, no decoration pretending to be function.
 
 **Warmth without softness**
-Background: `#faf9f6` (cream). Elevated elements (cards, inputs, modals): `#ffffff`. Accent: `#ffcb47` (warm yellow) — reserved for primary actions and key information only. One or two accent uses per viewport. If everything is highlighted, nothing is. Text: `#1a1a1a`. Muted text: `#6b6b6b`.
+The palette is warm cream for backgrounds, white for elevated elements, yellow accent for primary actions. But warmth doesn't mean rounded or gentle. Sharp corners, solid borders, crisp edges. Welcoming through clarity, not comfort.
 
-**Typography as hierarchy**
-Sans-serif for all UI: headings, labels, body text, navigation. Monospace only for inline data: numbers, dates, code snippets, technical values. Never use monospace for headings or section titles. Use Tailwind's `font-mono` and `font-sans` — do not explicitly set Inter, Roboto, or other named fonts. Distinct size jumps — if two sizes look similar, they shouldn't both exist.
+**Monospace everywhere**
+All text uses monospace. Headings, body, labels, data — all of it. Use Tailwind's `font-mono`. This creates the technical, terminal-inspired character of the system. Never set specific font families like Inter or Roboto.
 
-**Hard edges, hard shadows**
-Borders: 2px solid `#1a1a1a`. Radius: 0–2px maximum. Shadows: hard offset (e.g., `4px 4px 0 #1a1a1a`) with no blur. Hover: lift shadow or shift position. Focus: 2px accent (`#ffcb47`) outline or ring. Error: `#dc2626`. Success: `#16a34a`.
+**Uppercase for control surfaces**
+Buttons, labels, badges, headings, navigation items — anything that controls or identifies uses uppercase. Body text and descriptions stay sentence case.
 
-**Visual accents: minimal and functional**
-Decoration must serve a purpose — dividing sections, indicating state, guiding the eye. Acceptable: simple geometric shapes, line diagrams, technical schematics, dithered images, border dividers. Icons: pixel-art style preferred, otherwise Lucide or Heroicons outline. One decorative element per section maximum. If a visual flourish requires precise alignment or looks broken at different widths, don't use it.
+**Borders define everything**
+2px solid borders on all containers and interactive elements. No exceptions. Borders are the primary way to show hierarchy and grouping. No shadows, no gradients, no blur.
 
-**Motion as feedback**
-Minimal, functional transitions. Hover lifts, active presses. No bouncy physics, no decorative animation. Movement confirms interaction, nothing more.
+**The stripe reveals intent**
+Hover state is a left-edge stripe that slides in. This is the universal hover affordance across all interactive elements — buttons, menu items, table rows, sidebar links. A thin vertical bar appears on the left edge, confirming "this thing responds to you."
 
-**Space as structure**
-Generous whitespace where navigational. Data-dense where functional. Simple grids — clear rows, columns, sections. No overlapping layers, no diagonal flows, no visual complexity for its own sake.
+**Status through left stripe**
+For semantic states (success, warning, error, info), use a thicker left border in the appropriate color. The pattern is: neutral container, colored left edge. Icons use bracketed ASCII style: `[✓]` `[!]` `[×]` `[i]`
 
-**Accessible by default**
-Maintain WCAG AA contrast ratios. Interactive elements must have visible focus states. Touch targets minimum 44px. Don't sacrifice readability for aesthetics.
+**Selection inverts**
+When something is selected, active, or checked, it inverts — dark background, light text. This is the universal "this is on" signal. Buttons, tabs, menu items, calendar dates, toggle states — all use inversion for selection.
 
-## Never
+**No animation**
+State changes are instant. No transitions, no easing, no choreography. When something opens, it's open. When something changes, it's changed. The only exception is the spinner component, which rotates because a static spinner is useless.
 
-- Dark mode
-- Rounded corners beyond 2px
-- Blur or soft shadows
-- Multiple accent colors or gradients
-- Glassmorphism, neumorphism
-- Cartoon illustrations, mascots, complex decorative scenes
-- Purple/violet color schemes
-- ASCII art boxes or box-drawing characters as decoration
-- Monospace headings or section titles
+**Touch targets at 44px**
+All interactive elements use a minimum height of 44px (h-11 in Tailwind). This is non-negotiable for accessibility. Dense layouts must find other ways to save space.
+
+**Generous spacing is fine**
+Whitespace where navigational. Tight spacing where functional. The system doesn't require cramped layouts. Landing pages and marketing contexts can breathe. The design holds whether dense or spacious.
+
+## Implementation Details
+
+**Borders**: `border-2 border-primary` — 2px everywhere, using the primary color token
+
+**Radius**: `rounded-none` — zero corner radius on everything, no exceptions
+
+**Hover stripe**:
+```
+relative before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-current before:opacity-0 hover:before:w-1 hover:before:opacity-100
+```
+
+**Status stripe**: `border-l-4` with semantic color (green-500, amber-500, red-500, gray-500)
+
+**Selection**: `data-active:bg-primary data-active:text-primary-foreground`
+
+**Disabled**: Muted text, muted borders, no background change, no stripe
+
+**Focus**: Visible ring or outline in accent color
+
+**Type scale**: Use Tailwind's built-in scale (text-xs, text-sm, text-base, text-lg, etc.)
+
+**Semantic tokens**: Use bg-primary, text-muted-foreground, border-destructive, etc. Don't hardcode hex values.
+
+**Disable Radix animations**: Add `![animation-duration:0s] ![transition-duration:0s]` to overlay and content elements
+
+## Accent Color
+
+Yellow is the accent. It's reserved for primary actions and key information. One or two accent uses per viewport maximum. If everything is highlighted, nothing is.
 
 ## Technical Context
 
-React, Tailwind, shadcn/ui — but shadcn defaults must be overridden. Strip rounded corners, replace soft shadows, apply warm palette. Don't use components as-is.
+React, Tailwind, shadcn/ui. The shadcn defaults must be overridden — strip rounded corners, remove soft shadows, apply the design system. Components are starting points, not finished products.
