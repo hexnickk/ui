@@ -6,7 +6,7 @@ function H1({ className, style, ...props }: React.ComponentProps<"h1">) {
     <h1
       data-slot="h1"
       style={{ fontSize: "2.25rem", lineHeight: "2.5rem", ...style }}
-      className={cn("font-bold text-foreground", className)}
+      className={cn("font-bold text-foreground uppercase tracking-wide", className)}
       {...props}
     />
   );
@@ -17,7 +17,7 @@ function H2({ className, style, ...props }: React.ComponentProps<"h2">) {
     <h2
       data-slot="h2"
       style={{ fontSize: "1.875rem", lineHeight: "2.25rem", ...style }}
-      className={cn("font-bold text-foreground", className)}
+      className={cn("font-bold text-foreground uppercase tracking-wide", className)}
       {...props}
     />
   );
@@ -28,7 +28,7 @@ function H3({ className, style, ...props }: React.ComponentProps<"h3">) {
     <h3
       data-slot="h3"
       style={{ fontSize: "1.5rem", lineHeight: "2rem", ...style }}
-      className={cn("font-bold text-foreground", className)}
+      className={cn("font-bold text-foreground uppercase tracking-wide", className)}
       {...props}
     />
   );
@@ -39,7 +39,7 @@ function H4({ className, style, ...props }: React.ComponentProps<"h4">) {
     <h4
       data-slot="h4"
       style={{ fontSize: "1.25rem", lineHeight: "1.75rem", ...style }}
-      className={cn("font-bold text-foreground", className)}
+      className={cn("font-bold text-foreground uppercase tracking-wide", className)}
       {...props}
     />
   );

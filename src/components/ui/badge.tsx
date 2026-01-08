@@ -14,9 +14,15 @@ const badgeVariants = cva(
         destructive: "bg-red-100 text-red-700 border-red-500",
         outline: "bg-transparent border-primary border-dotted text-foreground",
       },
+      indicator: {
+        default: "",
+        dot: "before:content-[''] before:w-1.5 before:h-1.5 before:rounded-full before:bg-current before:mr-1.5",
+        icon: "[&>svg]:size-3",
+      },
     },
     defaultVariants: {
       variant: "default",
+      indicator: "default",
     },
   },
 );
@@ -24,6 +30,7 @@ const badgeVariants = cva(
 function Badge({
   className,
   variant = "default",
+  indicator = "default",
   asChild = false,
   ...props
 }: React.ComponentProps<"span"> &
@@ -34,7 +41,8 @@ function Badge({
     <Comp
       data-slot="badge"
       data-variant={variant}
-      className={cn(badgeVariants({ variant }), className)}
+      data-indicator={indicator}
+      className={cn(badgeVariants({ variant, indicator }), className)}
       {...props}
     />
   );

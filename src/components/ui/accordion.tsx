@@ -2,7 +2,6 @@ import * as React from "react"
 import { Accordion as AccordionPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
-import { ChevronDownIcon, ChevronUpIcon } from "lucide-react"
 
 function Accordion({
   className,
@@ -40,14 +39,18 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "bg-white text-foreground **:data-[slot=accordion-trigger-icon]:text-foreground rounded-none px-3 py-2.5 text-left text-xs font-medium uppercase **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-4 group/accordion-trigger relative flex flex-1 items-start justify-between border-2 border-transparent outline-none disabled:pointer-events-none disabled:opacity-50 before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-primary before:opacity-0 hover:before:w-1 hover:before:opacity-100 focus-visible:before:w-1 focus-visible:before:opacity-100",
+          "bg-white text-foreground rounded-none px-3 py-2.5 text-left text-xs font-medium uppercase group/accordion-trigger relative flex flex-1 items-start justify-between border-2 border-transparent outline-none disabled:pointer-events-none disabled:opacity-50 before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-primary before:opacity-0 hover:before:w-1 hover:before:opacity-100 focus-visible:before:w-1 focus-visible:before:opacity-100",
           className
         )}
         {...props}
       >
         {children}
-        <ChevronDownIcon data-slot="accordion-trigger-icon" className="pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden" />
-        <ChevronUpIcon data-slot="accordion-trigger-icon" className="pointer-events-none hidden shrink-0 group-aria-expanded/accordion-trigger:inline" />
+        <span className="font-mono text-xs ml-auto shrink-0 pointer-events-none group-aria-expanded/accordion-trigger:hidden">
+          [+]
+        </span>
+        <span className="font-mono text-xs ml-auto shrink-0 pointer-events-none hidden group-aria-expanded/accordion-trigger:inline">
+          [-]
+        </span>
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )

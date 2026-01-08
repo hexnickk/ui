@@ -4,6 +4,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Badge } from './badge';
 import { Input } from './input';
 import { Separator } from './separator';
+import { MarqueeBar } from './marquee-bar';
 
 const meta: Meta = {
   title: 'Examples/Landing Page',
@@ -16,6 +17,18 @@ type Story = StoryObj;
 export const Default: Story = {
   render: () => (
     <div className="min-h-screen bg-background font-mono">
+      {/* Announcement Bar */}
+      <MarqueeBar
+        items={[
+          'New Feature: Advanced Analytics Dashboard Now Available',
+          'Limited Time Offer: 50% Off Annual Plans',
+          'Join 10,000+ Teams Already Using TaskFlow',
+          'Free 14-Day Trial - No Credit Card Required',
+        ]}
+        speed="default"
+        pauseOnHover={true}
+      />
+
       {/* Header */}
       <header className="border-b-2 border-border bg-card">
         <div className="mx-auto max-w-7xl px-4 py-4">
@@ -68,6 +81,7 @@ export const Default: Story = {
               <Input
                 type="email"
                 placeholder="enter your email"
+                size="lg"
                 className="flex-1"
               />
               <Button size="lg" className="sm:w-auto">START FREE TRIAL</Button>
