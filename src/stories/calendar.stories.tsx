@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Calendar } from './calendar';
+import { Calendar } from '@/components/ui/calendar';
 import { useState } from 'react';
 import type { DateRange } from 'react-day-picker';
 

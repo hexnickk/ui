@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { MarqueeBar } from './marquee-bar';
+import { MarqueeBar } from '@/components/ui/marquee-bar';
 
 const meta: Meta<typeof MarqueeBar> = {
   title: 'UI/MarqueeBar',

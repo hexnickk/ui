@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Combobox, ComboboxInput, ComboboxContent, ComboboxList, ComboboxItem } from './combobox';
+import { Combobox, ComboboxInput, ComboboxContent, ComboboxList, ComboboxItem } from '@/components/ui/combobox';
 
 const meta: Meta<typeof Combobox> = {
   title: 'UI/Combobox',

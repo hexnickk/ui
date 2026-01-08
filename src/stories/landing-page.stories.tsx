@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from './button';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './card';
-import { Badge } from './badge';
-import { Input } from './input';
-import { Separator } from './separator';
-import { MarqueeBar } from './marquee-bar';
+import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
+import { Separator } from '@/components/ui/separator';
+import { MarqueeBar } from '@/components/ui/marquee-bar';
 
 const meta: Meta = {
   title: 'Examples/Landing Page',

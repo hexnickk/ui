@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from './button';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './card';
-import { Badge } from './badge';
-import { Input } from './input';
-import { Separator } from './separator';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
-import { Textarea } from './textarea';
+import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
+import { Separator } from '@/components/ui/separator';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { Textarea } from '@/components/ui/textarea';
 
 const meta: Meta = {
   title: 'Examples/User Profile Page',

@@ -4,7 +4,7 @@ import {
   InputGroupAddon,
   InputGroupInput,
   InputGroupText,
-} from './input-group';
+} from '@/components/ui/input-group';
 
 const meta: Meta<typeof InputGroup> = {
   title: 'UI/InputGroup',

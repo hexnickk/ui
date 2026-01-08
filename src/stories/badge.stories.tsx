@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Badge } from './badge';
+import { Badge } from '@/components/ui/badge';
 import { CheckIcon, XIcon, AlertCircleIcon } from 'lucide-react';
 
 const meta: Meta<typeof Badge> = {
